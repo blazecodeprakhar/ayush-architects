@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ayush Architects - Luxury Architectural Design System
+   Warm cream & charcoal (Light) | Prestigious Dark Espresso #171411 & Gold (Dark)
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Warm cream and deep charcoal */
+    --background: 40 30% 97%;
+    --foreground: 30 15% 7%;
+
+    /* Card surfaces */
+    --card: 40 25% 95%;
+    --card-foreground: 30 15% 7%;
+
+    /* Popover */
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 15% 7%;
+
+    /* Primary - Deep luxury charcoal/espresso */
+    --primary: 30 15% 8%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Warm taupe */
+    --secondary: 35 15% 88%;
+    --secondary-foreground: 30 10% 25%;
+
+    /* Muted - Soft warm gray */
+    --muted: 35 12% 90%;
+    --muted-foreground: 30 8% 45%;
+
+    /* Accent - Warm gold/bronze */
+    --accent: 38 60% 45%;
+    --accent-foreground: 40 30% 97%;
+
+    /* Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 35 15% 85%;
+    --input: 35 15% 85%;
+    --ring: 38 55% 50%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --gold: 38 55% 50%;
+    --gold-light: 38 60% 70%;
+    --gold-dark: 38 50% 35%;
+    --cream: 40 30% 97%;
+    --cream-dark: 40 25% 92%;
+    --charcoal: 30 10% 15%;
+    --charcoal-light: 30 8% 35%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38, 55%, 50%), hsl(38, 60%, 65%));
+    --gradient-cream: linear-gradient(180deg, hsl(40, 30%, 97%), hsl(40, 25%, 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(40, 30%, 97%) 0%, hsl(35, 20%, 90%) 100%);
+    --gradient-overlay: linear-gradient(to top, hsl(30, 10%, 15%, 0.8), transparent);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(30, 10%, 15%, 0.08);
+    --shadow-medium: 0 8px 40px hsl(30, 10%, 15%, 0.12);
+    --shadow-gold: 0 4px 24px hsl(38, 55%, 50%, 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Sidebar tokens */
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 38 55% 50%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 15% 88%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 35 15% 85%;
+    --sidebar-ring: 38 55% 50%;
+  }
+
+  .dark {
+    /* Exact user-requested #171411 luxury dark espresso foundation */
+    --background: 30 15% 7.8%; /* #171411 */
+    --foreground: 38 40% 94%;  /* #f6f0e7 soft warm ivory */
+
+    /* Elevated surfaces, cards, and modules */
+    --card: 30 14% 10.5%;      /* #1f1b17 */
+    --card-foreground: 38 40% 94%;
+
+    --popover: 30 15% 7.8%;    /* #171411 */
+    --popover-foreground: 38 40% 94%;
+
+    /* Dark Mode primary remains deep luxury espresso, NEVER white! */
+    --primary: 30 14% 10.5%;   /* #1f1b17 */
+    --primary-foreground: 38 40% 94%;
+
+    --secondary: 30 12% 13.5%; /* #27211c */
+    --secondary-foreground: 38 30% 88%;
+
+    --muted: 30 12% 12%;       /* #231e19 */
+    --muted-foreground: 34 15% 65%; /* Soft readable architectural sand */
+
+    /* Accent: prestigious architectural gold */
+    --accent: 38 65% 55%;      /* #d8a83d warm gold */
+    --accent-foreground: 30 15% 7.8%; /* #171411 */
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 16%;      /* #312922 subtle warm bronze-espresso */
+    --input: 30 12% 16%;
+    --ring: 38 65% 55%;
+
+    --gold: 38 65% 55%;
+    --gold-light: 38 70% 68%;
+    --gold-dark: 38 55% 42%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(38, 65%, 55%), hsl(38, 70%, 65%));
+    --gradient-hero: linear-gradient(180deg, #171411 0%, #1e1915 100%);
+    --gradient-cream: linear-gradient(180deg, #1f1b17 0%, #171411 100%);
+    --gradient-overlay: linear-gradient(to top, rgba(23, 20, 17, 0.95), transparent);
+
+    /* Sidebar tokens */
+    --sidebar-background: 30 15% 7.8%;
+    --sidebar-foreground: 38 40% 94%;
+    --sidebar-primary: 38 65% 55%;
+    --sidebar-primary-foreground: 30 15% 7.8%;
+    --sidebar-accent: 30 12% 13.5%;
+    --sidebar-accent-foreground: 38 30% 88%;
+    --sidebar-border: 30 12% 16%;
+    --sidebar-ring: 38 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    background-color: #171411 !important;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent/25 selection:text-accent;
+    font-family: 'DM Sans', sans-serif;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+
+  /* Hero circular button variant */
+  .btn-hero {
+    @apply rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-xs sm:text-sm uppercase tracking-widest font-medium shadow-md;
+    @apply hover:bg-accent hover:text-accent-foreground hover:scale-[1.03] active:scale-[0.98] transition-all duration-300;
+  }
+
+  /* Gold accent circular button */
+  .btn-gold {
+    @apply rounded-full bg-accent text-accent-foreground px-8 py-3.5 text-xs sm:text-sm uppercase tracking-widest font-medium shadow-md;
+    @apply hover:bg-gold-dark hover:scale-[1.04] active:scale-[0.97] transition-all duration-300;
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-gold:hover {
+    box-shadow: 0 6px 28px rgba(216, 168, 61, 0.45);
+  }
+
+  /* Outline elegant circular button */
+  .btn-outline-elegant {
+    @apply rounded-full border border-primary/30 dark:border-accent/40 text-foreground px-8 py-3.5 text-xs sm:text-sm uppercase tracking-widest font-medium shadow-sm backdrop-blur-sm;
+    @apply hover:bg-accent hover:text-accent-foreground hover:border-accent hover:scale-[1.04] active:scale-[0.97] transition-all duration-300;
+  }
+
+  /* Pill button variant */
+  .btn-pill {
+    @apply rounded-full px-6 py-2.5 text-xs uppercase tracking-widest font-medium transition-all duration-300 hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-12;
+  }
+
+  /* Elegant divider */
+  .divider-gold {
+    @apply w-16 h-0.5 bg-accent;
+  }
+
+  /* Image overlay effect */
+  .image-overlay {
+    @apply relative overflow-hidden rounded-2xl;
+  }
+
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-500 rounded-2xl;
+  }
+
+  .image-overlay:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Text reveal animation */
+  .text-reveal {
+    @apply overflow-hidden;
+  }
+
+  /* Card hover effect with modern rounded corners */
+  .card-elegant {
+    @apply bg-card rounded-2xl border border-border/50 transition-all duration-500;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-elegant:hover {
+    box-shadow: var(--shadow-medium);
+    @apply -translate-y-1.5 border-accent/40;
+  }
+}
+
+@layer utilities {
+
+  /* Scrollbar styling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+}

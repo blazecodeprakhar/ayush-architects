@@ -1,0 +1,67 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+.nyc_output
+
+# Production
+dist
+build
+out
+dist-ssr
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+
+# Editor Directories and Files
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*
+
+# TypeScript
+*.tsbuildinfo
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Optional: Ignore package-lock.json if you use yarn/pnpm exclusively, 
+# but generally good to keep for npm projects.
+# package-lock.json
+# yarn.lock
+bun.lockb
