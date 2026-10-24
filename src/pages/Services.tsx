@@ -25,8 +25,8 @@ import {
 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
-import projectKitchen from '@/assets/project-kitchen.jpg';
-import heroImage from '@/assets/hero-living-room.jpg';
+import projectKitchen from '@/assets/project-kitchen.webp';
+import heroImage from '@/assets/hero-living-room.webp';
 
 const allServices = [
   {

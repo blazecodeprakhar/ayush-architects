@@ -9,8 +9,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Lightbulb } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import heroImageLight from '@/assets/hero-living-room.jpg';
-import heroImageDark from '@/assets/hero-image-dark.png';
+import heroImageLight from '@/assets/hero-living-room.webp';
+import heroImageDark from '@/assets/hero-image-dark.webp';
 
 const HeroSection = () => {
   const { resolvedTheme } = useTheme();

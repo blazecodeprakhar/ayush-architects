@@ -6,7 +6,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Users, Clock, Star, CheckCircle2 } from 'lucide-react';
-import projectBedroom from '@/assets/project-bedroom.jpg';
+import projectBedroom from '@/assets/project-bedroom.webp';
 
 const stats = [
   { icon: Clock, value: '10+', label: 'Years Experience' },

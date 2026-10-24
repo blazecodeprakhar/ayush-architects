@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, Eye, CheckCircle2, ShieldCheck, Quote } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
-import ayushPortrait from '@/assets/me.png';
-import projectOffice from '@/assets/project-office.jpg';
+import ayushPortrait from '@/assets/me.webp';
+import projectOffice from '@/assets/project-office.webp';
 
 const coreValues = [
   {

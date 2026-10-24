@@ -11,12 +11,12 @@ import Layout from '@/components/layout/Layout';
 import InspiredCTA from '@/components/home/InspiredCTA';
 
 // Import project images
-import projectLiving from '@/assets/project-living-room.jpg';
-import projectKitchen from '@/assets/project-kitchen.jpg';
-import projectBedroom from '@/assets/project-bedroom.jpg';
-import projectDining from '@/assets/project-dining.jpg';
-import projectOffice from '@/assets/project-office.jpg';
-import projectBathroom from '@/assets/project-bathroom.jpg';
+import projectLiving from '@/assets/project-living-room.webp';
+import projectKitchen from '@/assets/project-kitchen.webp';
+import projectBedroom from '@/assets/project-bedroom.webp';
+import projectDining from '@/assets/project-dining.webp';
+import projectOffice from '@/assets/project-office.webp';
+import projectBathroom from '@/assets/project-bathroom.webp';
 
 const projects = [
   {
