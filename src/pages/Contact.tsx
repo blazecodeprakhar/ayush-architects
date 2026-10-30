@@ -61,11 +61,15 @@ const Contact = () => {
 
     try {
       const formPayload = new FormData();
-      formPayload.append('access_key', 'eccf24e4-acfa-411e-939e-685bba8c6131');
+      formPayload.append('access_key', '94436290-fd7b-4f7d-bc8c-3cacb2cb60d7');
       formPayload.append('name', formData.name);
       formPayload.append('email', formData.email);
-      formPayload.append('phone', formData.phone);
+      if (formData.phone) {
+        formPayload.append('phone', formData.phone);
+      }
       formPayload.append('message', formData.message);
+      formPayload.append('subject', `Consultation Inquiry from ${formData.name}`);
+      formPayload.append('from_name', 'Ayush Architects Website');
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
