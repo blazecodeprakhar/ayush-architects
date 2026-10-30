@@ -196,10 +196,10 @@ const HeroSection = () => {
               whileTap={{ scale: 0.97 }}
             >
               <Link
-                to="/services"
+                to="/portfolio"
                 className="btn-outline-elegant inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-background/80 dark:bg-card/80 backdrop-blur-md border-foreground/25 hover:border-accent hover:text-accent shadow-sm px-8 py-4 group"
               >
-                <span>Explore All Services</span>
+                <span>Our Work</span>
                 <span className="text-accent transition-transform duration-300 group-hover:translate-x-1.5">→</span>
               </Link>
             </motion.div>

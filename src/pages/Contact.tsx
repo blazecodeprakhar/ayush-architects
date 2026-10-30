@@ -24,12 +24,12 @@ const contactCards = [
   {
     icon: Phone,
     title: 'Direct Call',
-    lines: ['+91 98765 43210', '+91 91234 56789'],
+    lines: ['+91 86858 45744'],
   },
   {
     icon: Mail,
     title: 'Email Inquiry',
-    lines: ['info@ayusharchitects.com', 'consult@ayusharchitects.com'],
+    lines: ['ayusharchitects@gmail.com'],
   },
   {
     icon: Clock,
@@ -145,9 +145,31 @@ const Contact = () => {
                           {card.title}
                         </h3>
                         <div className="text-sm text-muted-foreground font-light space-y-1">
-                          {card.lines.map((line, i) => (
-                            <p key={i}>{line}</p>
-                          ))}
+                          {card.lines.map((line, i) => {
+                            if (card.icon === Phone) {
+                              return (
+                                <a
+                                  key={i}
+                                  href={`tel:${line.replace(/\s+/g, '')}`}
+                                  className="block hover:text-accent transition-colors"
+                                >
+                                  {line}
+                                </a>
+                              );
+                            }
+                            if (card.icon === Mail) {
+                              return (
+                                <a
+                                  key={i}
+                                  href={`mailto:${line}`}
+                                  className="block hover:text-accent transition-colors"
+                                >
+                                  {line}
+                                </a>
+                              );
+                            }
+                            return <p key={i}>{line}</p>;
+                          })}
                         </div>
                       </motion.div>
                     );
@@ -210,7 +232,7 @@ const Contact = () => {
                         </Label>
                         <Input
                           name="phone"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 86858 45744"
                           value={formData.phone}
                           onChange={handleChange}
                           className="h-12 bg-secondary/30 dark:bg-muted/30 border-border/60 focus:border-accent text-base rounded-2xl transition-all duration-300"

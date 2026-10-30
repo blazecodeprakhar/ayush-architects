@@ -11,7 +11,6 @@ import FeaturedProjects from '@/components/home/FeaturedProjects';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Testimonials from '@/components/home/Testimonials';
 import CTASection from '@/components/home/CTASection';
-import ProcessSection from '@/components/home/ProcessSection';
 import FAQSection from '@/components/home/FAQSection';
 import InspiredCTA from '@/components/home/InspiredCTA';
 
@@ -29,7 +28,6 @@ const Index = () => {
       <Layout>
         <HeroSection />
         <ServicesOverview />
-        <ProcessSection />
         <FeaturedProjects />
         <InspiredCTA />
         <WhyChooseUs />
