@@ -9,8 +9,8 @@ import { Award, Users, Clock, Star, CheckCircle2 } from 'lucide-react';
 import projectBedroom from '@/assets/project-bedroom.webp';
 
 const stats = [
-  { icon: Clock, value: '10+', label: 'Years Experience' },
-  { icon: Users, value: '250+', label: 'Built Spaces' },
+  { icon: Clock, value: '2+', label: 'Years Experience' },
+  { icon: Users, value: '50+', label: 'Built Spaces' },
   { icon: Award, value: '12+', label: 'Core Services' },
   { icon: Star, value: '100%', label: 'Commitment' },
 ];
@@ -127,7 +127,7 @@ const WhyChooseUs = () => {
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
               className="absolute -bottom-6 -left-4 sm:-left-8 bg-accent text-accent-foreground p-6 rounded-3xl shadow-gold backdrop-blur-md"
             >
-              <div className="font-serif text-3xl font-medium">10+</div>
+              <div className="font-serif text-3xl font-medium">2+</div>
               <div className="text-xs uppercase tracking-wider font-semibold">Years of Architectural Vision</div>
             </motion.div>
           </motion.div>
