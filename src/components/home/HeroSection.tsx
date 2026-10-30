@@ -197,10 +197,10 @@ const HeroSection = () => {
             >
               <Link
                 to="/portfolio"
-                className="btn-outline-elegant inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-background/80 dark:bg-card/80 backdrop-blur-md border-foreground/25 hover:border-accent hover:text-accent shadow-sm px-8 py-4 group"
+                className="btn-outline-elegant inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-background/80 dark:bg-card/80 backdrop-blur-md border-foreground/25 hover:border-accent shadow-sm px-8 py-4 group"
               >
-                <span>Our Work</span>
-                <span className="text-accent transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+                <span className="transition-colors duration-300 group-hover:text-accent-foreground">Our Work</span>
+                <span className="text-accent group-hover:text-accent-foreground transition-all duration-300 group-hover:translate-x-1.5">→</span>
               </Link>
             </motion.div>
           </motion.div>

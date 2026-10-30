@@ -59,10 +59,10 @@ const FeaturedProjects = () => {
           >
             <Link
               to="/portfolio"
-              className="btn-outline-elegant inline-flex items-center gap-3 px-8 py-3.5 group shadow-sm hover:border-accent hover:text-accent"
+              className="btn-outline-elegant inline-flex items-center gap-3 px-8 py-3.5 group shadow-sm hover:border-accent"
             >
-              <span className="font-medium tracking-wider">View Full Portfolio</span>
-              <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5 text-accent" />
+              <span className="font-medium tracking-wider transition-colors duration-300 group-hover:text-accent-foreground">View Full Portfolio</span>
+              <ChevronRight size={16} className="transition-all duration-300 group-hover:translate-x-1.5 text-accent group-hover:text-accent-foreground" />
             </Link>
           </motion.div>
         </motion.div>
