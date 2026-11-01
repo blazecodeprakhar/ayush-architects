@@ -27,12 +27,14 @@ import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
 import projectKitchen from '@/assets/project-kitchen.webp';
 import heroImage from '@/assets/hero-living-room.webp';
+import { serviceImages } from '@/assets/services';
 
 const allServices = [
   {
     icon: Compass,
     num: '01',
     title: 'Architectural Planning',
+    image: serviceImages['Architectural Planning'],
     description:
       'Complete architectural planning and design solutions for residential, commercial, and institutional projects.',
     features: [
@@ -46,6 +48,7 @@ const allServices = [
     icon: FileText,
     num: '02',
     title: '2D Floor Plans & Drawings',
+    image: serviceImages['2D Floor Plans & Drawings'],
     description:
       'Detailed 2D floor plans, working drawings, furniture layouts, and construction drawings as per project requirements.',
     features: [
@@ -59,6 +62,7 @@ const allServices = [
     icon: Box,
     num: '03',
     title: '3D Visualization',
+    image: serviceImages['3D Visualization'],
     description:
       'Realistic 3D models and renders to help you visualize your project before construction.',
     features: [
@@ -72,6 +76,7 @@ const allServices = [
     icon: Maximize2,
     num: '04',
     title: 'Space Planning',
+    image: serviceImages['Space Planning'],
     description:
       'Efficient planning of spaces with a focus on functionality, circulation, comfort, and aesthetics.',
     features: [
@@ -85,6 +90,7 @@ const allServices = [
     icon: Home,
     num: '05',
     title: 'Interior Design',
+    image: serviceImages['Interior Design'],
     description:
       'Complete interior design solutions including furniture layouts, material selection, lighting, finishes, and detailed interior drawings.',
     features: [
@@ -98,6 +104,7 @@ const allServices = [
     icon: Building2,
     num: '06',
     title: 'Facade & Elevation Design',
+    image: serviceImages['Facade & Elevation Design'],
     description:
       'Modern and functional facade and elevation designs that enhance the appearance and character of your building.',
     features: [
@@ -111,6 +118,7 @@ const allServices = [
     icon: Cpu,
     num: '07',
     title: 'Structural Planning',
+    image: serviceImages['Structural Planning'],
     description:
       'Structural drawings and planning for safe, stable, and efficient building structures.',
     features: [
@@ -124,6 +132,7 @@ const allServices = [
     icon: FolderKanban,
     num: '08',
     title: 'Project Management',
+    image: serviceImages['Project Management'],
     description:
       'Professional project coordination and management to help ensure quality, timelines, and smooth execution.',
     features: [
@@ -137,6 +146,7 @@ const allServices = [
     icon: FileCode2,
     num: '09',
     title: 'Working & Construction Drawings',
+    image: serviceImages['Working & Construction Drawings'],
     description:
       'Detailed drawings required for site execution, including plans, sections, elevations, details, and construction information.',
     features: [
@@ -150,6 +160,7 @@ const allServices = [
     icon: Trees,
     num: '10',
     title: 'Landscape Design',
+    image: serviceImages['Landscape Design'],
     description:
       'Planning of outdoor spaces, gardens, pathways, plantations, and landscape elements to complement the building.',
     features: [
@@ -163,6 +174,7 @@ const allServices = [
     icon: Hammer,
     num: '11',
     title: 'Renovation & Remodeling',
+    image: serviceImages['Renovation & Remodeling'],
     description:
       'Design solutions for renovating, upgrading, and transforming existing residential and commercial spaces.',
     features: [
@@ -176,6 +188,7 @@ const allServices = [
     icon: MapPin,
     num: '12',
     title: 'Site Planning',
+    image: serviceImages['Site Planning'],
     description:
       'Complete site development planning including building placement, circulation, parking, landscape areas, and other site requirements.',
     features: [
@@ -288,6 +301,7 @@ const Services = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {allServices.map((service, index) => {
                 const Icon = service.icon;
+                const serviceImage = service.image || serviceImages[service.title];
                 return (
                   <motion.div
                     key={service.title}
@@ -296,43 +310,58 @@ const Services = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05, duration: 0.5 }}
                     whileHover={{ y: -6 }}
-                    className="bg-card rounded-3xl p-8 border border-border/60 hover:border-accent/40 shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col justify-between"
+                    className="group bg-card rounded-3xl border border-border/60 hover:border-accent/40 shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col justify-between overflow-hidden"
                   >
                     <div>
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/50 flex items-center justify-center text-accent">
-                          <Icon size={26} strokeWidth={1.75} />
-                        </div>
-                        <span className="font-serif text-2xl text-muted-foreground/30 font-medium">
-                          {service.num}
-                        </span>
+                      {/* Landscape Image in 16:9 ratio */}
+                      <div className="relative aspect-video w-full overflow-hidden bg-muted/40">
+                        <img
+                          src={serviceImage}
+                          alt={service.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-80 pointer-events-none" />
                       </div>
 
-                      <h3 className="font-serif text-2xl font-medium mb-3 text-foreground">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light">
-                        {service.description}
-                      </p>
-
-                      <div className="space-y-2 mb-8">
-                        {service.features.map((feature) => (
-                          <div key={feature} className="flex items-start gap-2.5 text-xs text-foreground/80">
-                            <CheckCircle2 size={15} className="text-accent shrink-0 mt-0.5" />
-                            <span>{feature}</span>
+                      <div className="p-7 sm:p-8">
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/50 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground group-hover:rotate-6 transition-all duration-300 shadow-sm">
+                            <Icon size={26} strokeWidth={1.75} />
                           </div>
-                        ))}
+                          <span className="font-serif text-2xl text-muted-foreground/30 font-medium group-hover:text-accent/50 transition-colors">
+                            {service.num}
+                          </span>
+                        </div>
+
+                        <h3 className="font-serif text-2xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors">
+                          {service.title}
+                        </h3>
+
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light">
+                          {service.description}
+                        </p>
+
+                        <div className="space-y-2.5 mb-8">
+                          {service.features.map((feature) => (
+                            <div key={feature} className="flex items-start gap-2.5 text-xs text-foreground/80">
+                              <CheckCircle2 size={15} className="text-accent shrink-0 mt-0.5" />
+                              <span>{feature}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-border/40">
-                      <Link
-                        to="/contact"
-                        className="btn-outline-elegant w-full text-center py-2.5 text-xs inline-block"
-                      >
-                        Inquire About Service
-                      </Link>
+                    <div className="px-7 sm:px-8 pb-7 sm:pb-8 pt-0">
+                      <div className="pt-4 border-t border-border/40">
+                        <Link
+                          to={`/contact?service=${encodeURIComponent(service.title)}`}
+                          className="btn-outline-elegant w-full text-center py-2.5 text-xs inline-block"
+                        >
+                          Inquire About Service
+                        </Link>
+                      </div>
                     </div>
                   </motion.div>
                 );
