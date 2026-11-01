@@ -337,4 +337,14 @@ a, a:visited {
   }
 }
 
+/* Luxury Themed Architectural Map */
+.map-themed {
+  transition: filter 0.6s ease;
+  filter: grayscale(20%) contrast(102%) brightness(98%);
+}
+
+.dark .map-themed {
+  filter: invert(90%) hue-rotate(180deg) brightness(82%) contrast(105%) sepia(30%) saturate(120%);
+}
+
 

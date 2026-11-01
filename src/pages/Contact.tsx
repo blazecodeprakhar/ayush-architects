@@ -6,7 +6,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ExternalLink } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
@@ -19,7 +19,7 @@ const contactCards = [
   {
     icon: MapPin,
     title: 'Studio Location',
-    lines: ['Ayush Architects Design Studio', 'Architecture & Planning Division'],
+    lines: ['Ayush Architects Design Studio', 'New Delhi & NCR, India'],
   },
   {
     icon: Phone,
@@ -184,20 +184,42 @@ const Contact = () => {
                   })}
                 </div>
 
-                {/* Map with rounded corners */}
+                {/* Themed Architectural Map of India */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.98 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  className="rounded-3xl overflow-hidden shadow-md h-[280px] w-full border border-border/60"
+                  className="relative rounded-3xl overflow-hidden shadow-medium h-[300px] w-full border border-border/70 dark:border-accent/40 group bg-card"
                 >
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"
-                    className="w-full h-full border-0 grayscale-[40%] hover:grayscale-0 transition-all duration-700"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"
+                    className="w-full h-full border-0 map-themed"
                     loading="lazy"
-                    title="Office Location"
+                    title="Ayush Architects Studio Location - India"
                   />
+
+                  {/* Studio Floating Location Badge */}
+                  <div className="absolute top-3.5 left-3.5 z-10 bg-background/90 dark:bg-[#171411]/90 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-border/80 dark:border-accent/40 shadow-lg flex items-center gap-2.5 pointer-events-none">
+                    <div className="w-7 h-7 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold shrink-0">
+                      <MapPin size={14} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-serif font-medium text-foreground">Ayush Architects</p>
+                      <p className="text-[9px] uppercase tracking-wider text-accent font-semibold">New Delhi, India</p>
+                    </div>
+                  </div>
+
+                  {/* Open in Maps Button */}
+                  <a
+                    href="https://maps.google.com/?q=New+Delhi,+India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-3.5 right-3.5 z-10 bg-background/90 dark:bg-[#1f1b17]/95 hover:bg-accent hover:text-white dark:hover:bg-accent dark:hover:text-stone-950 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] font-medium tracking-wider text-foreground border border-border/80 dark:border-accent/40 shadow-md transition-all duration-300 flex items-center gap-1.5 hover:scale-105 active:scale-95"
+                  >
+                    <span>Open in Maps</span>
+                    <ExternalLink size={11} className="text-accent" />
+                  </a>
                 </motion.div>
               </div>
 
