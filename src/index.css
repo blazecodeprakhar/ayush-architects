@@ -321,3 +321,20 @@
   animation: glow-gold 3s ease-in-out infinite;
 }
 
+/* Reset visited link color & remove mobile sticky tap highlights */
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) {
+  a:focus, button:focus {
+    outline: none;
+  }
+}
+
+

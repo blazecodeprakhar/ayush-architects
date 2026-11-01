@@ -210,33 +210,46 @@ const Navbar = () => {
 
             {/* Navigation Links in Center */}
             <div className="flex-1 px-8 py-8 flex flex-col justify-center items-center gap-6">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 15 }}
-                  transition={{ delay: 0.04 * index }}
-                  className="w-full text-center"
-                >
-                  <Link
-                    to={link.path}
-                    onClick={(e) => handleNavClick(e, link.path)}
-                    className={`block py-1 text-2xl font-serif tracking-wide transition-colors duration-300 ${
-                      location.pathname === link.path
-                        ? 'text-accent font-semibold'
-                        : 'text-foreground hover:text-accent'
-                    }`}
+              {navLinks.map((link, index) => {
+                const isLinkActive =
+                  link.path === '/'
+                    ? location.pathname === '/'
+                    : location.pathname.startsWith(link.path);
+
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 15 }}
+                    transition={{ delay: 0.04 * index }}
+                    className="w-full text-center"
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      to={link.path}
+                      onClick={(e) => {
+                        (e.currentTarget as HTMLElement)?.blur();
+                        handleNavClick(e, link.path);
+                      }}
+                      className={`block py-1.5 text-2xl font-serif tracking-wide transition-colors duration-200 outline-none select-none ${
+                        isLinkActive
+                          ? 'text-accent font-semibold'
+                          : 'text-foreground'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
 
               <div className="w-full max-w-xs mt-4">
                 <Link
                   to="/contact"
-                  onClick={(e) => handleNavClick(e, '/contact')}
+                  onClick={(e) => {
+                    (e.currentTarget as HTMLElement)?.blur();
+                    handleNavClick(e, '/contact');
+                  }}
                   className="btn-gold w-full flex items-center justify-center py-3.5 text-xs tracking-widest font-semibold uppercase shadow-gold"
                 >
                   Book Free Consultation
