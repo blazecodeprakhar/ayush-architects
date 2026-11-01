@@ -75,25 +75,36 @@ const Testimonials = () => {
 
           {/* Testimonial Card */}
           <div className="relative mt-12">
-            {/* Watermark Quote Icon */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 -z-10 pointer-events-none">
+            {/* Watermark Quote Icon with continuous floating animation */}
+            <motion.div
+              animate={{ y: [-6, 6, -6], rotate: [-2, 2, -2] }}
+              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 -z-10 pointer-events-none"
+            >
               <Quote size={120} className="text-accent/10 fill-accent/5" />
-            </div>
+            </motion.div>
 
             <div className="relative z-10 min-h-[260px] flex flex-col justify-between">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  initial={{ opacity: 0, y: 25, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.98 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="flex flex-col items-center"
                 >
-                  {/* Rating Stars */}
+                  {/* Rating Stars with staggered spring pop-in */}
                   <div className="flex justify-center gap-1.5 mb-8">
                     {Array.from({ length: testimonials[currentIndex].rating }).map((_, i) => (
-                      <Star key={i} size={18} className="fill-accent text-accent" />
+                      <motion.div
+                        key={i}
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: i * 0.07, type: 'spring', stiffness: 400, damping: 15 }}
+                      >
+                        <Star size={18} className="fill-accent text-accent drop-shadow-sm" />
+                      </motion.div>
                     ))}
                   </div>
 
@@ -115,15 +126,17 @@ const Testimonials = () => {
               </AnimatePresence>
             </div>
 
-            {/* Navigation - Circular Buttons & Dots */}
+            {/* Navigation - Circular Buttons & Dots with spring feedback */}
             <div className="flex items-center justify-center gap-8 mt-12">
-              <button
+              <motion.button
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={prev}
-                className="group w-12 h-12 rounded-full border border-border/80 bg-background/80 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm hover:scale-110 active:scale-95"
+                className="group w-12 h-12 rounded-full border border-border/80 bg-background/80 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={20} className="text-foreground group-hover:text-white transition-colors" />
-              </button>
+              </motion.button>
 
               {/* Dots */}
               <div className="flex items-center gap-2.5">
@@ -141,13 +154,15 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={next}
-                className="group w-12 h-12 rounded-full border border-border/80 bg-background/80 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm hover:scale-110 active:scale-95"
+                className="group w-12 h-12 rounded-full border border-border/80 bg-background/80 hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={20} className="text-foreground group-hover:text-white transition-colors" />
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

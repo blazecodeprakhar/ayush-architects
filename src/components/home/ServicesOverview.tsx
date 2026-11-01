@@ -108,37 +108,41 @@ const ServicesOverview = () => {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                whileHover={{ y: -8 }}
-                className="group relative bg-card/90 dark:bg-card/70 backdrop-blur-sm rounded-3xl border border-border/60 hover:border-accent/40 shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -10, transition: { type: 'spring', stiffness: 320, damping: 22 } }}
+                className="group relative bg-card/90 dark:bg-card/70 backdrop-blur-sm rounded-3xl border border-border/60 hover:border-accent/60 shadow-soft hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden"
               >
                 <div>
-                  {/* Landscape Image in 16:9 ratio */}
+                  {/* Landscape Image in 16:9 ratio with zoom */}
                   <div className="relative aspect-video w-full overflow-hidden bg-muted/40">
                     <img
                       src={serviceImage}
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out select-none pointer-events-none"
+                      draggable={false}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-black/20 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-black/20 pointer-events-none" />
                   </div>
 
                   <div className="p-7 sm:p-8">
-                    {/* Top Bar with Number and Icon */}
+                    {/* Top Bar with Number and Animated Icon */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/40 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground group-hover:rotate-6 transition-all duration-300 shadow-sm">
+                      <motion.div
+                        whileHover={{ rotate: 12, scale: 1.1 }}
+                        className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/40 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground group-hover:rotate-6 transition-all duration-400 shadow-sm"
+                      >
                         <Icon size={26} strokeWidth={1.75} />
-                      </div>
-                      <span className="text-2xl font-serif text-muted-foreground/30 font-medium group-hover:text-accent/50 transition-colors">
+                      </motion.div>
+                      <span className="text-2xl font-serif text-muted-foreground/30 font-medium group-hover:text-accent/60 group-hover:scale-110 transition-all duration-300">
                         {service.num}
                       </span>
                     </div>
 
-                    <h3 className="font-serif text-xl sm:text-2xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors">
+                    <h3 className="font-serif text-xl sm:text-2xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors duration-300">
                       {service.title}
                     </h3>
 
@@ -151,10 +155,10 @@ const ServicesOverview = () => {
                 <div className="px-7 sm:px-8 pb-7 sm:pb-8 pt-0">
                   <Link
                     to="/services"
-                    className="pt-4 border-t border-border/40 flex items-center text-xs uppercase tracking-widest text-accent font-medium group-hover:gap-2 transition-all"
+                    className="pt-4 border-t border-border/40 flex items-center text-xs uppercase tracking-widest text-accent font-medium transition-all group-hover:text-accent group-hover:gap-2"
                   >
                     <span>Learn More</span>
-                    <ArrowRight size={14} className="ml-1 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight size={14} className="ml-1 transition-transform duration-300 group-hover:translate-x-2" />
                   </Link>
                 </div>
               </motion.div>
@@ -180,7 +184,7 @@ const ServicesOverview = () => {
               className="btn-gold inline-flex items-center gap-3 shadow-md hover:shadow-gold px-8 py-4 group"
             >
               <span className="font-semibold tracking-wider">Explore All 12 Services</span>
-              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-2" />
             </Link>
           </motion.div>
         </motion.div>

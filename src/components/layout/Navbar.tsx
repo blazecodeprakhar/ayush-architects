@@ -135,6 +135,8 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Link
                   to="/contact"
@@ -149,14 +151,16 @@ const Navbar = () => {
             {/* Mobile Right Controls: Theme Toggle + Menu Button */}
             <div className="flex items-center gap-3 lg:hidden">
               <ThemeToggle />
-              <button
+              <motion.button
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.92 }}
                 type="button"
                 onClick={() => setIsOpen(true)}
                 className="w-10 h-10 rounded-full flex items-center justify-center border border-border/80 bg-background/80 dark:bg-stone-900/80 backdrop-blur-md text-foreground hover:text-accent hover:border-accent transition-colors shadow-sm"
                 aria-label="Open menu"
               >
                 <Menu size={20} />
-              </button>
+              </motion.button>
             </div>
           </div>
         </nav>

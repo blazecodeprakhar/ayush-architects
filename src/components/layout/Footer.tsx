@@ -5,6 +5,7 @@
  */
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
@@ -34,14 +35,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="/" onClick={handleLogoClick} className="inline-block mb-6 cursor-pointer group">
-              <span className="font-serif text-2xl font-semibold tracking-tight text-white group-hover:text-accent transition-colors">
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              href="/"
+              onClick={handleLogoClick}
+              className="inline-block mb-6 cursor-pointer group"
+            >
+              <span className="font-serif text-2xl font-semibold tracking-tight text-white group-hover:text-accent transition-colors duration-300">
                 Ayush Architects
               </span>
               <p className="text-[10px] uppercase tracking-[0.3em] text-accent mt-1 font-medium">
                 Spaces For Better Tomorrow
               </p>
-            </a>
+            </motion.a>
             <p className="text-stone-400 text-sm leading-relaxed mb-6 font-light">
               Where imagination takes form and every space tells a story. Thoughtful architecture
               blending creativity, functionality, and timeless design.
@@ -53,14 +59,16 @@ const Footer = () => {
                 { icon: Facebook, label: 'Facebook' },
                 { icon: Linkedin, label: 'LinkedIn' },
               ].map(({ icon: Icon, label }) => (
-                <a
+                <motion.a
                   key={label}
                   href="#"
-                  className="w-10 h-10 rounded-full border border-stone-700/80 bg-stone-900/60 flex items-center justify-center text-stone-300 hover:bg-accent hover:border-accent hover:text-stone-950 hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm"
+                  whileHover={{ scale: 1.15, rotate: 6 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-full border border-stone-700/80 bg-stone-900/60 flex items-center justify-center text-stone-300 hover:bg-accent hover:border-accent hover:text-stone-950 transition-all duration-300 shadow-sm"
                   aria-label={label}
                 >
                   <Icon size={17} />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -142,14 +150,18 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="mt-8">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="mt-8"
+            >
               <Link
                 to="/contact"
-                className="btn-gold w-full text-center py-2.5 text-xs inline-block shadow-md"
+                className="btn-gold w-full text-center py-3 text-xs inline-block shadow-md hover:shadow-gold"
               >
                 Book Free Consultation
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
 

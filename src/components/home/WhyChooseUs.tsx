@@ -71,28 +71,33 @@ const WhyChooseUs = () => {
                 'End-to-end interior design and facade styling',
                 'Transparent communication and rigorous on-site coordination',
               ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-accent mt-0.5 shrink-0" />
+                <motion.li
+                  key={index}
+                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                  className="flex items-start gap-3 group cursor-default transition-colors hover:text-white"
+                >
+                  <CheckCircle2 size={18} className="text-accent mt-0.5 shrink-0 transition-transform duration-300 group-hover:scale-125" />
                   <span>{item}</span>
-                </li>
+                </motion.li>
               ))}
             </motion.ul>
 
-            {/* Stats */}
+            {/* Stats Cards with spring hover */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-stone-800/80"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-stone-800/80"
             >
               {stats.map((stat) => (
                 <motion.div
                   key={stat.label}
-                  whileHover={{ scale: 1.08, y: -3 }}
-                  className="text-center p-2 rounded-2xl transition-colors hover:bg-stone-800/40 cursor-default"
+                  whileHover={{ y: -6, scale: 1.06, backgroundColor: 'rgba(38, 32, 26, 0.7)' }}
+                  transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+                  className="text-center p-3 sm:p-4 rounded-2xl border border-transparent hover:border-accent/40 transition-all duration-300 cursor-default"
                 >
-                  <stat.icon className="w-5 h-5 text-accent mx-auto mb-2" />
+                  <stat.icon className="w-5 h-5 text-accent mx-auto mb-2 transition-transform duration-300 group-hover:rotate-6" />
                   <div className="font-serif text-2xl lg:text-3xl font-medium text-accent">
                     {stat.value}
                   </div>
@@ -111,21 +116,23 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="relative"
+            onContextMenu={(e) => e.preventDefault()}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-700/50">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-700/50 group">
               <img
                 src={pavalionImage2}
                 alt="Ayush Architects design showcase"
-                className="w-full h-[500px] lg:h-[600px] object-cover"
+                className="w-full h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none"
+                draggable={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Floating Badge with smooth continuous hovering motion */}
             <motion.div
-              animate={{ y: [-4, 4, -4] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="absolute -bottom-6 -left-4 sm:-left-8 bg-accent text-accent-foreground p-6 rounded-3xl shadow-gold backdrop-blur-md"
+              animate={{ y: [-6, 6, -6] }}
+              transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut' }}
+              className="absolute -bottom-6 -left-4 sm:-left-8 bg-accent text-accent-foreground p-6 rounded-3xl shadow-gold backdrop-blur-md border border-white/20"
             >
               <div className="font-serif text-3xl font-medium">4+</div>
               <div className="text-xs uppercase tracking-wider font-semibold">Years of Architectural Vision</div>

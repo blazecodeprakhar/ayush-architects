@@ -136,16 +136,20 @@ const Contact = () => {
                     return (
                       <motion.div
                         key={card.title}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: idx * 0.08 }}
-                        className="bg-card rounded-3xl p-6 border border-border/60 shadow-soft hover:shadow-medium transition-all duration-300"
+                        transition={{ delay: idx * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 350, damping: 22 } }}
+                        className="group bg-card rounded-3xl p-6 border border-border/60 hover:border-accent/60 shadow-soft hover:shadow-xl transition-all duration-400"
                       >
-                        <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <motion.div
+                          whileHover={{ rotate: 12, scale: 1.1 }}
+                          className="w-12 h-12 rounded-2xl bg-accent/10 group-hover:bg-accent group-hover:text-accent-foreground flex items-center justify-center text-accent mb-4 transition-all duration-300 shadow-sm"
+                        >
                           <Icon size={22} />
-                        </div>
-                        <h3 className="font-serif text-lg font-medium mb-2 text-foreground">
+                        </motion.div>
+                        <h3 className="font-serif text-lg font-medium mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
                           {card.title}
                         </h3>
                         <div className="text-sm text-muted-foreground font-light space-y-1">
@@ -155,7 +159,7 @@ const Contact = () => {
                                 <a
                                   key={i}
                                   href={`tel:${line.replace(/\s+/g, '')}`}
-                                  className="block hover:text-accent transition-colors"
+                                  className="block hover:text-accent transition-colors duration-300"
                                 >
                                   {line}
                                 </a>
@@ -166,7 +170,7 @@ const Contact = () => {
                                 <a
                                   key={i}
                                   href={`mailto:${line}`}
-                                  className="block hover:text-accent transition-colors"
+                                  className="block hover:text-accent transition-colors duration-300"
                                 >
                                   {line}
                                 </a>

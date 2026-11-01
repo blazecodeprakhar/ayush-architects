@@ -305,10 +305,11 @@ const Services = () => {
                     key={service.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05, duration: 0.5 }}
-                    whileHover={{ y: -6 }}
-                    className="group bg-card rounded-3xl border border-border/60 hover:border-accent/40 shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ delay: index * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -8, scale: 1.01, transition: { type: 'spring', stiffness: 350, damping: 22 } }}
+                    className="group bg-card rounded-3xl border border-border/60 hover:border-accent/60 shadow-soft hover:shadow-2xl transition-all duration-400 flex flex-col justify-between overflow-hidden"
+                    onContextMenu={(e) => e.preventDefault()}
                   >
                     <div>
                       {/* Landscape Image in 16:9 ratio */}
@@ -317,22 +318,26 @@ const Services = () => {
                           src={serviceImage}
                           alt={service.title}
                           loading="lazy"
-                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                          className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out select-none pointer-events-none"
+                          draggable={false}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-80 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-85 pointer-events-none" />
                       </div>
 
                       <div className="p-7 sm:p-8">
                         <div className="flex items-center justify-between mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/50 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground group-hover:rotate-6 transition-all duration-300 shadow-sm">
+                          <motion.div
+                            whileHover={{ rotate: 12, scale: 1.1 }}
+                            className="w-14 h-14 rounded-2xl bg-secondary dark:bg-muted/50 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground group-hover:rotate-6 transition-all duration-300 shadow-sm"
+                          >
                             <Icon size={26} strokeWidth={1.75} />
-                          </div>
-                          <span className="font-serif text-2xl text-muted-foreground/30 font-medium group-hover:text-accent/50 transition-colors">
+                          </motion.div>
+                          <span className="font-serif text-2xl text-muted-foreground/30 font-medium group-hover:text-accent/60 group-hover:scale-110 transition-all duration-300">
                             {service.num}
                           </span>
                         </div>
 
-                        <h3 className="font-serif text-2xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors">
+                        <h3 className="font-serif text-2xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors duration-300">
                           {service.title}
                         </h3>
 
@@ -342,10 +347,14 @@ const Services = () => {
 
                         <div className="space-y-2.5 mb-8">
                           {service.features.map((feature) => (
-                            <div key={feature} className="flex items-start gap-2.5 text-xs text-foreground/80">
+                            <motion.div
+                              key={feature}
+                              whileHover={{ x: 3 }}
+                              className="flex items-start gap-2.5 text-xs text-foreground/80 transition-colors hover:text-foreground"
+                            >
                               <CheckCircle2 size={15} className="text-accent shrink-0 mt-0.5" />
                               <span>{feature}</span>
-                            </div>
+                            </motion.div>
                           ))}
                         </div>
                       </div>
@@ -414,10 +423,10 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05, duration: 0.4 }}
-                  whileHover={{ x: 4 }}
-                  className="bg-card rounded-2xl p-6 lg:p-8 border border-border/60 hover:border-accent/40 shadow-soft transition-all duration-300 flex items-start gap-5"
+                  whileHover={{ y: -4, x: 4, transition: { type: 'spring', stiffness: 350, damping: 22 } }}
+                  className="group bg-card rounded-2xl p-6 lg:p-8 border border-border/60 hover:border-accent/60 shadow-soft hover:shadow-lg transition-all duration-300 flex items-start gap-5"
                 >
-                  <span className="font-serif text-2xl lg:text-3xl font-medium text-accent shrink-0">
+                  <span className="font-serif text-2xl lg:text-3xl font-medium text-accent shrink-0 transition-transform duration-300 group-hover:scale-110">
                     {step.step}
                   </span>
                   <div>

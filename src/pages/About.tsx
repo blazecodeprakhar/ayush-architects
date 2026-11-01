@@ -273,14 +273,17 @@ const About = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ y: -6 }}
-                    className="bg-card rounded-3xl p-8 border border-border/60 hover:border-accent/40 shadow-soft transition-all duration-300 text-center flex flex-col items-center"
+                    transition={{ delay: index * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -8, scale: 1.02, transition: { type: 'spring', stiffness: 350, damping: 22 } }}
+                    className="group bg-card rounded-3xl p-8 border border-border/60 hover:border-accent/60 shadow-soft hover:shadow-xl transition-all duration-400 text-center flex flex-col items-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 text-accent">
+                    <motion.div
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      className="w-16 h-16 rounded-2xl bg-accent/10 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 flex items-center justify-center mb-6 text-accent shadow-sm"
+                    >
                       <Icon size={26} strokeWidth={1.75} />
-                    </div>
-                    <h3 className="font-serif text-xl font-medium mb-3 text-foreground">
+                    </motion.div>
+                    <h3 className="font-serif text-xl font-medium mb-3 text-foreground group-hover:text-accent transition-colors duration-300">
                       {val.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-light">
