@@ -1,9 +1,9 @@
 import projectLiving from '@/assets/project-living-room.webp';
 import projectKitchen from '@/assets/project-kitchen.webp';
 import projectBedroom from '@/assets/project-bedroom.webp';
-import projectDining from '@/assets/project-dining.webp';
-import projectOffice from '@/assets/project-office.webp';
-import projectBathroom from '@/assets/project-bathroom.webp';
+import modernKindergarden from '@/assets/landscape/Modern Kindergarden.jpeg';
+import luxuriousOffice from '@/assets/landscape/Luxurious Office.jpeg';
+import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
 
 export const projects = [
     {
@@ -26,21 +26,21 @@ export const projects = [
     },
     {
         id: 4,
-        title: 'Refined Dining',
-        category: 'Dining Room',
-        image: projectDining,
+        title: 'Modern Kindergarden',
+        category: 'Educational',
+        image: modernKindergarden,
     },
     {
         id: 5,
-        title: 'Executive Study',
+        title: 'Luxurious Office',
         category: 'Home Office',
-        image: projectOffice,
+        image: luxuriousOffice,
     },
     {
         id: 6,
-        title: 'Spa Sanctuary',
-        category: 'Bathroom',
-        image: projectBathroom,
+        title: 'Modern Luxury Residence',
+        category: 'Residential',
+        image: modernResidence,
     },
 ];
 

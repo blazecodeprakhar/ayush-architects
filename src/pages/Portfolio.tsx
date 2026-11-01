@@ -13,9 +13,9 @@ import Layout from '@/components/layout/Layout';
 import projectLiving from '@/assets/project-living-room.webp';
 import projectKitchen from '@/assets/project-kitchen.webp';
 import projectBedroom from '@/assets/project-bedroom.webp';
-import projectDining from '@/assets/project-dining.webp';
-import projectOffice from '@/assets/project-office.webp';
-import projectBathroom from '@/assets/project-bathroom.webp';
+import modernKindergarden from '@/assets/landscape/Modern Kindergarden.jpeg';
+import luxuriousOffice from '@/assets/landscape/Luxurious Office.jpeg';
+import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
 
 const projects = [
   {
@@ -44,27 +44,27 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Refined Dining',
-    category: 'Dining Room',
-    location: 'Chelsea, NY',
-    image: projectDining,
-    description: 'Sophisticated dining space for memorable gatherings. Statement chandelier and velvet seating set the stage for elegant entertaining.',
+    title: 'Modern Kindergarden',
+    category: 'Educational',
+    location: 'Urban Campus',
+    image: modernKindergarden,
+    description: 'A contemporary kindergarten designed with playful outdoor spaces, interactive landscapes, and child-friendly architecture, fostering creativity, exploration, and joyful learning.',
   },
   {
     id: 5,
-    title: 'Executive Study',
+    title: 'Luxurious Office',
     category: 'Home Office',
     location: 'Tribeca, NY',
-    image: projectOffice,
+    image: luxuriousOffice,
     description: 'Inspiring workspace combining productivity with style. Built-in shelving and leather accents create a distinguished atmosphere.',
   },
   {
     id: 6,
-    title: 'Spa Sanctuary',
-    category: 'Bathroom',
-    location: 'SoHo, NY',
-    image: projectBathroom,
-    description: 'Luxurious bathroom retreat with natural stone, freestanding tub, and ambient lighting. A spa experience at home.',
+    title: 'Modern Luxury Residence',
+    category: 'Residential',
+    location: 'Private Estate',
+    image: modernResidence,
+    description: 'A contemporary luxury residence featuring clean geometric volumes, expansive terraces, elegant material contrasts, and minimalist detailing, creating a sophisticated blend of modern design and comfort.',
   },
 ];
 

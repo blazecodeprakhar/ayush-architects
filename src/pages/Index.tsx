@@ -10,7 +10,6 @@ import ServicesOverview from '@/components/home/ServicesOverview';
 import FeaturedProjects from '@/components/home/FeaturedProjects';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Testimonials from '@/components/home/Testimonials';
-import CTASection from '@/components/home/CTASection';
 import FAQSection from '@/components/home/FAQSection';
 
 const Index = () => {
@@ -31,7 +30,6 @@ const Index = () => {
         <WhyChooseUs />
         <Testimonials />
         <FAQSection />
-        <CTASection />
       </Layout>
     </>
   );
