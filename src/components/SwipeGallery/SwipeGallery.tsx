@@ -100,7 +100,7 @@ const SwipeGallery = () => {
             </button>
 
             {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-4">
+            <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mt-6 max-w-xl mx-auto px-4">
                 {projects.map((_, idx) => (
                     <button
                         key={idx}
