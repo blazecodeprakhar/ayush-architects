@@ -72,30 +72,34 @@ const SwipeGallery = () => {
                                 damping: 20,
                             }}
                         >
-                            <div className="w-full h-full relative overflow-hidden rounded-[24px]">
+                            <div 
+                                className="w-full h-full relative overflow-hidden rounded-[24px] select-none"
+                                onContextMenu={(e) => e.preventDefault()}
+                            >
                                 <AnimatePresence mode="wait">
                                     <motion.img
                                         key={`${project.id}-${currentAngle}`}
                                         src={projectImages[currentAngle]}
-                                        alt={`${project.title} - Angle ${currentAngle + 1}`}
+                                        alt={`${project.title} - View ${currentAngle + 1}`}
                                         initial={{ opacity: 0.6 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0.6 }}
                                         transition={{ duration: 0.25 }}
-                                        className="gallery-card"
+                                        className="gallery-card pointer-events-none select-none"
                                         draggable="false"
+                                        onContextMenu={(e) => e.preventDefault()}
                                     />
                                 </AnimatePresence>
 
-                                {/* Angle Counter Badge */}
+                                {/* Counter Badge */}
                                 {hasMultipleAngles && (
                                     <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wider text-white z-20 pointer-events-none border border-white/10 flex items-center gap-1 shadow-sm">
                                         <Camera size={11} className="text-accent" />
-                                        <span>{currentAngle + 1}/{projectImages.length}</span>
+                                        <span>{currentAngle + 1} / {projectImages.length}</span>
                                     </div>
                                 )}
 
-                                {/* Angle Navigation Controls for Active Card */}
+                                {/* Navigation Controls for Active Card */}
                                 {hasMultipleAngles && offset === 0 && (
                                     <>
                                         <button
@@ -109,7 +113,7 @@ const SwipeGallery = () => {
                                                 }));
                                             }}
                                             className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/20 shadow-md hover:scale-110 active:scale-95"
-                                            aria-label="Previous angle"
+                                            aria-label="Previous view"
                                         >
                                             <ChevronLeft size={16} />
                                         </button>
@@ -124,12 +128,12 @@ const SwipeGallery = () => {
                                                 }));
                                             }}
                                             className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/20 shadow-md hover:scale-110 active:scale-95"
-                                            aria-label="Next angle"
+                                            aria-label="Next view"
                                         >
                                             <ChevronRight size={16} />
                                         </button>
 
-                                        {/* Angle Dots */}
+                                        {/* View Dots */}
                                         <div
                                             onPointerDown={(e) => e.stopPropagation()}
                                             className="absolute bottom-20 left-0 right-0 z-30 flex justify-center gap-1.5 pointer-events-auto"
@@ -145,7 +149,7 @@ const SwipeGallery = () => {
                                                     className={`h-1.5 rounded-full transition-all duration-300 ${
                                                         i === currentAngle ? 'w-5 bg-accent' : 'w-1.5 bg-white/40 hover:bg-white/80'
                                                     }`}
-                                                    aria-label={`View angle ${i + 1}`}
+                                                    aria-label={`View ${i + 1}`}
                                                 />
                                             ))}
                                         </div>
