@@ -183,7 +183,7 @@ const HeroSection = () => {
                   }}
                   className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12 pointer-events-none"
                 />
-                <span className="relative z-10 font-semibold tracking-wider">Book Consultation</span>
+                <span className="relative z-10 font-semibold tracking-wider">Book Free Consultation</span>
                 <ArrowRight
                   size={16}
                   className="relative z-10 transition-transform duration-300 group-hover:translate-x-1.5"

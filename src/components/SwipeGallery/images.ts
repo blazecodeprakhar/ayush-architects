@@ -112,7 +112,7 @@ export const projects: Project[] = [
     },
     {
         id: 6,
-        title: 'Modern Luxury Residence',
+        title: 'Modern House',
         category: 'Residential',
         location: 'Private Estate',
         image: modernResidence,

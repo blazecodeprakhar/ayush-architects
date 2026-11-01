@@ -206,7 +206,7 @@ const Contact = () => {
               >
                 <div className="mb-8">
                   <h2 className="font-serif text-3xl md:text-4xl font-medium mb-3 text-foreground">
-                    Send Us a Message
+                    Feel Free to Contact
                   </h2>
                   <p className="text-muted-foreground text-sm font-light">
                     Share your requirements with Ayush Architects and our team will get back to you promptly.

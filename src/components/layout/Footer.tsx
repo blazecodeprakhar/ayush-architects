@@ -147,7 +147,7 @@ const Footer = () => {
                 to="/contact"
                 className="btn-gold w-full text-center py-2.5 text-xs inline-block shadow-md"
               >
-                Book Consultation
+                Book Free Consultation
               </Link>
             </div>
           </div>

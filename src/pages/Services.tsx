@@ -25,8 +25,6 @@ import {
 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
-import projectKitchen from '@/assets/project-kitchen.webp';
-import heroImage from '@/assets/hero-living-room.webp';
 import { serviceImages } from '@/assets/services';
 
 const allServices = [
@@ -497,7 +495,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
             >
               <Link to="/contact" className="btn-gold inline-flex items-center gap-3 shadow-lg">
-                <span>Book Consultation</span>
+                <span>Book Free Consultation</span>
                 <ArrowRight size={16} />
               </Link>
             </motion.div>

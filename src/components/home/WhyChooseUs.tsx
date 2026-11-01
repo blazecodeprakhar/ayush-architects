@@ -6,7 +6,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Users, Clock, Star, CheckCircle2 } from 'lucide-react';
-import projectBedroom from '@/assets/project-bedroom.webp';
+import pavalionImage2 from '@/assets/landscape/Dome Pavalion (2).png';
 
 const stats = [
   { icon: Clock, value: '4+', label: 'Years Experience' },
@@ -114,7 +114,7 @@ const WhyChooseUs = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-700/50">
               <img
-                src={projectBedroom}
+                src={pavalionImage2}
                 alt="Ayush Architects design showcase"
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />

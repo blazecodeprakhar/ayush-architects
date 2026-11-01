@@ -10,7 +10,7 @@ import { ArrowRight, Compass, Eye, CheckCircle2, ShieldCheck, Quote } from 'luci
 import Layout from '@/components/layout/Layout';
 import PageHeader from '@/components/shared/PageHeader';
 import ayushPortrait from '@/assets/me.webp';
-import projectOffice from '@/assets/project-office.webp';
+import luxuriousOffice2 from '@/assets/landscape/Luxurious Office (2).jpeg';
 
 const coreValues = [
   {
@@ -242,7 +242,7 @@ const About = () => {
                 className="relative rounded-3xl overflow-hidden shadow-xl"
               >
                 <img
-                  src={projectOffice}
+                  src={luxuriousOffice2}
                   alt="Ayush Architects studio workspace"
                   className="w-full h-[400px] lg:h-[480px] object-cover"
                 />
