@@ -10,9 +10,9 @@ import { ArrowUpRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 
 // Import project images
-import projectLiving from '@/assets/project-living-room.webp';
-import projectKitchen from '@/assets/project-kitchen.webp';
-import projectBedroom from '@/assets/project-bedroom.webp';
+import sangamPavalion from '@/assets/landscape/Dome Pavalion.png';
+import pavalionInteriors from '@/assets/landscape/Pavalion Hall.jpeg';
+import classicMansion from '@/assets/landscape/Classical Mansion.jpeg';
 import modernKindergarden from '@/assets/landscape/Modern Kindergarden.jpeg';
 import luxuriousOffice from '@/assets/landscape/Luxurious Office.jpeg';
 import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
@@ -20,27 +20,27 @@ import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
 const projects = [
   {
     id: 1,
-    title: 'Minimalist Haven',
-    category: 'Living Room',
-    location: 'Manhattan, NY',
-    image: projectLiving,
-    description: 'A serene living space with clean lines, neutral tones, and luxurious comfort. Custom furniture and carefully curated art create a sophisticated yet welcoming atmosphere.',
+    title: 'Sangam Pavalion',
+    category: 'Pavilion Architecture',
+    location: 'Cultural Zone',
+    image: sangamPavalion,
+    description: 'A sculptural dome pavilion that blends organic architecture, natural light, and serene landscaped spaces to create a harmonious connection between nature and design.',
   },
   {
     id: 2,
-    title: 'Culinary Elegance',
-    category: 'Kitchen',
-    location: 'Brooklyn, NY',
-    image: projectKitchen,
-    description: 'Modern kitchen design featuring marble countertops, warm wood cabinetry, and gold accents. Form meets function in this chef-worthy space.',
+    title: 'Pavalion Interiors',
+    category: 'Interior Design',
+    location: 'Exhibition Hall',
+    image: pavalionInteriors,
+    description: 'The interiors feature warm ambient lighting, fluid spatial forms, and a minimalist material palette, creating a tranquil and immersive atmosphere that complements the pavilion’s organic architecture.',
   },
   {
     id: 3,
-    title: 'Tranquil Retreat',
-    category: 'Master Bedroom',
-    location: 'Upper East Side, NY',
-    image: projectBedroom,
-    description: 'A peaceful sanctuary designed for ultimate relaxation. Plush bedding, soft ambient lighting, and a neutral palette create the perfect escape.',
+    title: 'Classic Mansion',
+    category: 'Luxury Architecture',
+    location: 'Private Grounds',
+    image: classicMansion,
+    description: 'A timeless classical mansion featuring elegant symmetry, pitched roofs, arched windows, and refined detailing, reflecting grandeur and traditional architectural charm.',
   },
   {
     id: 4,

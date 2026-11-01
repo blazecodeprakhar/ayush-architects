@@ -1,6 +1,6 @@
-import projectLiving from '@/assets/project-living-room.webp';
-import projectKitchen from '@/assets/project-kitchen.webp';
-import projectBedroom from '@/assets/project-bedroom.webp';
+import sangamPavalion from '@/assets/landscape/Dome Pavalion.png';
+import pavalionInteriors from '@/assets/landscape/Pavalion Hall.jpeg';
+import classicMansion from '@/assets/landscape/Classical Mansion.jpeg';
 import modernKindergarden from '@/assets/landscape/Modern Kindergarden.jpeg';
 import luxuriousOffice from '@/assets/landscape/Luxurious Office.jpeg';
 import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
@@ -8,21 +8,21 @@ import modernResidence from '@/assets/landscape/MODERN HOUSE.png';
 export const projects = [
     {
         id: 1,
-        title: 'Minimalist Haven',
-        category: 'Living Room',
-        image: projectLiving,
+        title: 'Sangam Pavalion',
+        category: 'Pavilion Architecture',
+        image: sangamPavalion,
     },
     {
         id: 2,
-        title: 'Culinary Elegance',
-        category: 'Kitchen',
-        image: projectKitchen,
+        title: 'Pavalion Interiors',
+        category: 'Interior Design',
+        image: pavalionInteriors,
     },
     {
         id: 3,
-        title: 'Tranquil Retreat',
-        category: 'Master Bedroom',
-        image: projectBedroom,
+        title: 'Classic Mansion',
+        category: 'Luxury Architecture',
+        image: classicMansion,
     },
     {
         id: 4,
