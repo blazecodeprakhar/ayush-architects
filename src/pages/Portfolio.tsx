@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import InspiredCTA from '@/components/home/InspiredCTA';
 
 // Import project images
 import projectLiving from '@/assets/project-living-room.webp';
@@ -158,9 +157,6 @@ const Portfolio = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <InspiredCTA />
       </Layout>
     </>
   );
